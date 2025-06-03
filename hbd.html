@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Ucapan Ulang Tahun 🎂</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #d94f4f;
+    }
+
+    .message {
+      font-size: 1.5em;
+      margin: 20px auto;
+      width: 80%;
+      background-color: rgba(255,255,255,0.9);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: none;
+    }
+
+    .btn {
+      background-color: #d94f4f;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #b63d3d;
+    }
+
+    img {
+      width: 200px;
+      margin-top: 20px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {transform: translateY(0);}
+      50% {transform: translateY(-10px);}
+    }
+
+    /* Modal Popup */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .modal-content img {
+      width: 100%;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+
+    .close {
+      color: #aaa;
+      font-size: 30px;
+      float: right;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Happy Sweet Seventeen! 🎂</h1>
+  <h2> Muhammad Abdullah Faqih </h2>
+  <button class="btn" onclick="showGreeting()">Klik ini dulu</button>
+  <button class="btn" onclick="showGallery()">Habis itu ini</button>
+
+  <div class="message" id="birthdayMessage"></div>
+  <img src="c:\Users\HP\Downloads\IMG_SEGMENT_20250603_185348.png" alt="Birthday cake">
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeGallery()">&times;</span>
+      <h2> Ketawa aja dulu📸</h2>
+      <img src="c:\Users\HP\Downloads\WhatsApp Unknown 2025-06-03 at 18.58.36\WhatsApp Image 2025-06-03 at 18.55.55.jpeg" alt="Foto 1">
+      <img src="c:\Users\HP\Downloads\WhatsApp Image 2025-06-03 at 18.55.55.jpeg" alt="Foto 2">
+      <img src="c:\Users\HP\Downloads\IMG_SEGMENT_20250603_185408.png" alt="Foto 3">
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="bgMusic" loop>
+    <source src="c:\Users\HP\Downloads\Funny happy birthday song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const openings = [
+      "🎈 Selamat ulang tahun yang ke 17!",
+      "🎉 Hari ini harus jadi hari yang berinar!",
+      "🥳 Happy Birthday!",
+      "🌟 Kamu hebat sampai di hari ini!",
+      "🎂 Waktunya merayakan!"
+    ];
+
+    const wishes = [
+      "Semoga panjang umur dan sehat selalu. 💖",
+      "Impianmu semoga segera tercapai. ✨",
+      "Hari-harimu dipenuhi CINTA dan tawa. 😄",
+      "Kebahagiaan dan rezeki mengalir deras untukmu. 💸",
+      "Dikelilingi orang-orang yang menyayangimu. 💞"
+    ];
+
+    const closings = [
+      "🎁 Jangan lupa bahagia hari ini!",
+      "💃 Nikmati hari istimewa ini sepenuhnya!",
+      "🎊 Rayakan dengan penuh suka cita!",
+      "🍰 Makan kue yang banyak ya!",
+      "💌 Doa terbaik untukmu selalu."
+    ];
+
+    function generateGreeting() {
+      const opening = openings[Math.floor(Math.random() * openings.length)];
+      const wish = wishes[Math.floor(Math.random() * wishes.length)];
+      const closing = closings[Math.floor(Math.random() * closings.length)];
+      return `${opening}<br><br>${wish}<br><br>${closing}`;
+    }
+
+    function showGreeting() {
+      const msgDiv = document.getElementById("birthdayMessage");
+      msgDiv.innerHTML = generateGreeting();
+      msgDiv.style.display = "block";
+      document.getElementById("bgMusic").play();
+    }
+
+    function showGallery() {
+      document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeGallery() {
+      document.getElementById("myModal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
